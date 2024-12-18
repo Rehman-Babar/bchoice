@@ -6,16 +6,16 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { themeSettings } from "theme";
 import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
-import Products from "scenes/products";
-import Customers from "scenes/customers";
-import Transactions from "scenes/transactions";
-import Geography from "scenes/geography";
-import Overview from "scenes/overview";
-import Daily from "scenes/daily";
-import Monthly from "scenes/monthly";
-import Breakdown from "scenes/breakdown";
-import Admin from "scenes/admin";
-import Performance from "scenes/performance";
+// import Products from "scenes/products";
+// import Customers from "scenes/customers";
+// import Transactions from "scenes/transactions";
+// import Geography from "scenes/geography";
+// import Overview from "scenes/overview";
+// import Daily from "scenes/daily";
+// import Monthly from "scenes/monthly";
+// import Breakdown from "scenes/breakdown";
+// import Admin from "scenes/admin";
+// import Performance from "scenes/performance";
 import ProductPage from "scenes/products/ProductPage";
 import AddProductPage from "scenes/products/AddNewProducts";
 import { Toaster } from "react-hot-toast";
@@ -93,7 +93,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/all users" element={<AllUsers />} />
               <Route path="/Seller Users" element={<SellerUsers />} />
-              <Route path="/products" element={<Products />} />
+              {/* <Route path="/products" element={<Products />} /> */}
               <Route path="/productspage" element={<ProductPage />} />
               <Route path="/productspage/bestseller" element={<BestSellerProducts />} />
               <Route path="/addproducts" element={<AddProductPage />} />
@@ -104,15 +104,7 @@ function App() {
               <Route path="/list/all products" element={<AllProducts />} />
               <Route path="/orders" element={<GetOrder />} />
               <Route path="/order/:id" element={<OrderDetails />} />
-              <Route path="/customers" element={<Customers />} />
-              <Route path="/transactions" element={<Transactions />} />
-              <Route path="/geography" element={<Geography />} />
-              <Route path="/overview" element={<Overview />} />
-              <Route path="/daily" element={<Daily />} />
-              <Route path="/monthly" element={<Monthly />} />
-              <Route path="/breakdown" element={<Breakdown />} />
-              <Route path="/admin" element={<Admin />} />
-              <Route path="/performance" element={<Performance />} />
+
               <Route path="/affilate/marketer/team/reporting" element={<AffilateTeam />} />
               <Route path="/affilate/marketer/team/reporting complaient" element={<BCSupport />} />
               <Route path="/affilate/marketer/team/reporting/daily update" element={<DailyUpdate />} />

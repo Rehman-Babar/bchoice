@@ -201,7 +201,7 @@ const NavItemsPage = ({ user, handleDel, closeModal, fetchUsers }) => {
 
     try {
       const response = await fetch(
-        `https://admin-server-98to.onrender.com/api/v2/auth/seller/admin/update/request/${user._id}`,
+        `http://localhost:8000/api/v2/auth/seller/admin/update/request/${user._id}`,
         {
           method: "POST",
           headers: {

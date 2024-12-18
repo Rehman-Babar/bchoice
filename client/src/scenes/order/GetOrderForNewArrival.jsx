@@ -34,7 +34,7 @@ function GetOrderForNewArrival() {
     setDeleteLoading(true);
 
     try {
-      const response = await fetch(`https://admin-server-98to.onrender.com/client/delete/${id}`, {
+      const response = await fetch(`http://localhost:8000/client/delete/${id}`, {
         method: "DELETE",
       });
       const data = await response.json();
@@ -76,7 +76,7 @@ function GetOrderForNewArrival() {
 
     setLoadingOrderId(orderId);
     try {
-      const response = await fetch(`https://admin-server-98to.onrender.com/client/order/update/order-status/${orderId}`, {
+      const response = await fetch(`http://localhost:8000/client/order/update/order-status/${orderId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

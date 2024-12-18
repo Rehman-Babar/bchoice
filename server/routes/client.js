@@ -1,9 +1,6 @@
 import express from "express";
 import {
-  getProducts,
-  getCustomers,
-  getTransactions,
-  getGeography,
+
   addProduct,
   getAddedProducts,
   CreateBestSellingOrder,
@@ -22,9 +19,6 @@ import CreateOrder, { deleteOrder, GetAllOrder, singleOrder, UpdateOrderStatus }
 
 const router = express.Router();
 
-
-router.get("/products", getProducts);
-// mry he hain
 router.post("/addproducts", addProduct);
 router.get("/getallorders", GetAllOrder);
 router.delete("/delete/product/admin/:id", DeleteSingleProduct);
@@ -49,9 +43,5 @@ router.get("/getAddedProducts", getAddedProducts);
 router.get("/allproduct/home/bestselling", AllProductForHomePage);
 router.get("/allproduct/bestselling/admin/customgift", getBestSellingProductsForAdmin);
 
-// end
-router.get("/customers", getCustomers);
-router.get("/transactions", getTransactions);
-router.get("/geography", getGeography);
 
 export default router;

@@ -15,7 +15,7 @@ const SellerWorkingStatus = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "https://admin-server-98to.onrender.com/api/v2/auth/seller/buyer/admin/users/special"
+          "http://localhost:8000/api/v2/auth/seller/buyer/admin/users/special"
         );
         setUsers(response.data);
         setLoading(false);
@@ -34,7 +34,7 @@ const SellerWorkingStatus = () => {
   
     try {
       const response = await axios.post(
-        `https://admin-server-98to.onrender.com/api/v2/auth/seller/update/workig/status/${selectedUser._id}`,
+        `http://localhost:8000/api/v2/auth/seller/update/workig/status/${selectedUser._id}`,
         { workingStatus: selectedStatus }
       );
       if( response.status === '200' ){

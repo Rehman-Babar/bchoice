@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from "react";
-import FlexBetween from "components/FlexBetween";
-import Header from "components/Header";
-import { Box, Button, Typography, useTheme, useMediaQuery } from "@mui/material";
-import BreakdownChart from "components/BreakdownChart";
-import OverviewChart from "components/OverviewChart";
+import { Box} from "@mui/material";
+
 import { FaBoxOpen, FaHourglassHalf, FaTruck, FaTimes, FaCheckCircle, FaExclamationCircle, FaUndo, FaUsers, FaMoneyBillWave, FaHandHoldingUsd, FaCashRegister, FaShippingFast, FaChartLine, FaFileInvoiceDollar, FaRegSadCry } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllOrders, selectAllOrders } from "state/ordersData/getOrdersForDashboard";
+
 import { fetchOrders } from "state/ordersData/GetOrderHook";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-  const theme = useTheme();
-  const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
+
 
   // Fetch all orders from Redux
   useEffect(() => {
@@ -137,24 +133,6 @@ const Dashboard = () => {
     )}
   </div>
 
-  {/* Additional content - Responsive Grid Layout for Charts and Other Sections */}
-  <Box mt="20px" display="grid" gridTemplateColumns="repeat(12, 1fr)" gridAutoRows="160px" gap="20px" sx={{ "& > div": { gridColumn: isNonMediumScreens ? undefined : "span 12" } }}>
-    <Box
-      gridColumn="span 8"
-      gridRow="span 2"
-      backgroundColor={theme.palette.background.alt}
-      p="1rem"
-      borderRadius="0.55rem"
-      sx={{
-        // Responsive adjustments for the chart
-        "@media (max-width: 1200px)": {
-          gridColumn: "span 12", // On smaller screens, take full width
-        },
-      }}
-    >
-      <OverviewChart view="sales" isDashboard={true} />
-    </Box>
-  </Box>
 </Box>
 
   );

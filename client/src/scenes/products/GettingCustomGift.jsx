@@ -57,7 +57,7 @@ const GettingCustomGift = () => {
     }
   
     setDeletingProductId(productId); // Set the ID of the product being deleted
-    const url = `https://admin-server-98to.onrender.com/client/delete/product/admin/${productId}`;
+    const url = `http://localhost:8000/client/delete/product/admin/${productId}`;
     
     try {
       const response = await fetch(url, { method: "DELETE" });

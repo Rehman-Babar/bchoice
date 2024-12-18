@@ -147,7 +147,7 @@ const EditModal = ({ productData, closeModal }) => {
   
     try {
       const response = await fetch(
-        `https://admin-server-98to.onrender.com/client/update/anyproduct/admin/${productData._id}`,
+        `http://localhost:8000/client/update/anyproduct/admin/${productData._id}`,
         {
           method: "POST",
           headers: {

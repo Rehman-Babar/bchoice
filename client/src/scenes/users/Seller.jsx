@@ -16,7 +16,7 @@ const SellerUsers = () => {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(
-        "https://admin-server-98to.onrender.com/api/v2/auth/seller/buyer/admin/users/special"
+        "http://localhost:8000/api/v2/auth/seller/buyer/admin/users/special"
       );
       setUsers(response.data); // Assuming response.data contains the list of users
       console.log(response.data);
@@ -65,7 +65,7 @@ if (!isConfirmed) {
   return;
 }
     try {
-      await axios.delete(`https://admin-server-98to.onrender.com/api/v2/auth/del/${userId}`);
+      await axios.delete(`http://localhost:8000/api/v2/auth/del/${userId}`);
       setUsers(users.filter(user => user._id !== userId)); // Remove the user from the list
       closeModal();
       toast.success("User deleted successfully")
@@ -79,7 +79,7 @@ if (!isConfirmed) {
   // const changeStatus = async (userId, currentStatus) => {
   //   try {
   //     const newStatus = currentStatus === "Active" ? "Inactive" : "Active";
-  //     await axios.patch(`https://admin-server-98to.onrender.com/api/v2/auth/seller/buyer/admin/users/${userId}`, { status: newStatus });
+  //     await axios.patch(`http://localhost:8000/api/v2/auth/seller/buyer/admin/users/${userId}`, { status: newStatus });
   //     setUsers(users.map(user => 
   //       user._id === userId ? { ...user, status: newStatus } : user
   //     ));

@@ -6,7 +6,6 @@ import { configureStore } from "@reduxjs/toolkit";
 import globalReducer from "state";
 import { Provider } from "react-redux";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import { api } from "state/api";
 import ordersReducer from "state/ordersData/GetOrderHook.js";
 import allOrdersReducer from "state/ordersData/getOrdersForDashboard";
 import productsReducer from "state/newArrivalAndBestSeller.js";
@@ -18,7 +17,7 @@ import allproductsReducer from "state/allproducts.js";
 const store = configureStore({
   reducer: {
     global: globalReducer,
-    [api.reducerPath]: api.reducer,
+
     orders: ordersReducer,
     allOrders: allOrdersReducer,
     products: productsReducer,
@@ -27,7 +26,6 @@ const store = configureStore({
     auth:authReducer,
     allproducts:allproductsReducer
   },
-  middleware: (getDefault) => getDefault().concat(api.middleware),
 });
 setupListeners(store.dispatch);
 

@@ -39,7 +39,7 @@ const loadUserFromLocalStorage = () => {
 // Async thunk actions
 export const signup = createAsyncThunk("auth/signup", async (credentials, { rejectWithValue }) => {
   try {
-    const response = await axios.post("https://admin-server-98to.onrender.com/api/v1/auth/signup", credentials);
+    const response = await axios.post("http://localhost:8000/api/v1/auth/signup", credentials);
     toast.success("Account created successfully");
     // Save user to localStorage
     setWithExpiry("user", response.data.user, 1);
@@ -77,7 +77,7 @@ export const logout = createAsyncThunk("auth/logout", async (_, { rejectWithValu
 
 export const authCheck = createAsyncThunk("auth/authCheck", async (_, { rejectWithValue }) => {
   try {
-    const response = await axios.get("https://admin-server-98to.onrender.com/api/v1/auth/me");
+    const response = await axios.get("http://localhost:8000/api/v1/auth/me");
     return response.data.user;
   } catch (error) {
     const user = loadUserFromLocalStorage();

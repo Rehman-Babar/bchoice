@@ -163,7 +163,7 @@ const CustomGifts = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(`https://admin-server-98to.onrender.com/client/bestsellingorder`, {
+      const response = await fetch(`http://localhost:8000/client/bestsellingorder`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

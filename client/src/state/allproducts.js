@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // Step 1: Define an async thunk for fetching all products
 export const fetchAllProducts = createAsyncThunk("allproducts/fetchAllProducts", async () => {
-  const res = await fetch("https://admin-server-98to.onrender.com/client/allproduct/home/bestselling");
+  const res = await fetch("http://localhost:8000/client/allproduct/home/bestselling");
   const data = await res.json();
   console.log('data', data);
   return data;
