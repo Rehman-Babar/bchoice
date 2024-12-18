@@ -11,7 +11,7 @@ const OrderDetails = () => {
   useEffect(() => {
     const fetchOrderDetails = async () => {
       try {
-        const res = await fetch(`http://localhost:8000/client/order/${id}`);
+        const res = await fetch(`/client/order/${id}`);
         const data = await res.json();
         if (data.error) {
           toast.error("Internal server error: " + data.error);

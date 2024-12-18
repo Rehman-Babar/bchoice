@@ -147,7 +147,7 @@ const EditModal = ({ productData, closeModal }) => {
   
     try {
       const response = await fetch(
-        `http://localhost:8000/client/update/anyproduct/admin/${productData._id}`,
+        `/client/update/anyproduct/admin/${productData._id}`,
         {
           method: "POST",
           headers: {

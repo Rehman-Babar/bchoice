@@ -56,9 +56,6 @@ app.use("/api/v6/dailyupdate", dailyUpdatesRoutes);
 app.use("/api/v7/payment", paymentRoutes);
 app.use("/api/v8/invest", investRoutes);
 app.use("/client", clientRoutes);
-// app.use("/general", generalRoutes);
-// app.use("/management", managementRoutes);
-// app.use("/sales", salesRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000;

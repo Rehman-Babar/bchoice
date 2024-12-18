@@ -154,7 +154,7 @@ const AddProductPage = () => {
     try {
       setLoading(true);
 
-      const response = await fetch(`http://localhost:8000/client/addproducts`, {
+      const response = await fetch(`/client/addproducts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

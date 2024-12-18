@@ -69,7 +69,7 @@ const BulkPaymentModal = ({ isOpen, onClose, users, investments, fetchInvestment
     try {
       await Promise.all(
         validForms.map((formData) =>
-          axios.post("http://localhost:8000/api/v8/invest/send", {
+          axios.post("/api/v8/invest/send", {
             sellerId: formData.userId,
             userName: formData.userName,
             investmentCtr: formData.investmentCtr,

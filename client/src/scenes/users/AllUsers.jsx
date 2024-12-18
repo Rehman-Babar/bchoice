@@ -11,7 +11,7 @@ const AllUsers = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/v2/auth/seller/buyer/admin/users/special"
+          "/api/v2/auth/seller/buyer/admin/users/special"
         );
         setUsers(response.data); // Assuming response.data contains the list of users
         console.log(response.data);

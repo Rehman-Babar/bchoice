@@ -201,7 +201,7 @@ const NavItemsPage = ({ user, handleDel, closeModal, fetchUsers }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/api/v2/auth/seller/admin/update/request/${user._id}`,
+        `/api/v2/auth/seller/admin/update/request/${user._id}`,
         {
           method: "POST",
           headers: {

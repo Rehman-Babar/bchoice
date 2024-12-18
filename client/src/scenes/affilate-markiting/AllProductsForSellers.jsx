@@ -23,7 +23,7 @@ const AllProductsForSellers = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/v3/products/products/all"); // Replace with your API endpoint
+        const response = await axios.get("/api/v3/products/products/all"); // Replace with your API endpoint
         setProducts(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -55,7 +55,7 @@ const AllProductsForSellers = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/api/v3/products/products/update/${currentProductUpdate._id}`,
+        `/api/v3/products/products/update/${currentProductUpdate._id}`,
         formData
       );
       toast.success("Product updated successfully!");
@@ -76,7 +76,7 @@ const AllProductsForSellers = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v3/products/products/add",
+        "/api/v3/products/products/add",
         formData
       );
       toast.success("Product submitted successfully!");
@@ -95,7 +95,7 @@ const AllProductsForSellers = () => {
   const submitDelete =async (product) => {
     setLoading(true);
     try {
-      await axios.delete(`http://localhost:8000/api/v3/products/delete/${product._id}`);
+      await axios.delete(`/api/v3/products/delete/${product._id}`);
       toast.success("Product deleted successfully!");
       setProducts((prev) => prev.filter((p) => p._id!== product._id));
     } catch (error) {
