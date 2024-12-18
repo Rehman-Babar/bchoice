@@ -163,7 +163,7 @@ const CustomGifts = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(`/client/bestsellingorder`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/client/bestsellingorder`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

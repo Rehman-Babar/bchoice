@@ -32,7 +32,7 @@ function GetOrder() {
     }
     setDeleteLoading(true);
     try {
-      const response = await fetch(`/client/delete/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/client/delete/${id}`, {
         method: "DELETE",
       });
       const data = await response.json();
@@ -82,7 +82,7 @@ function GetOrder() {
 
     setLoadingOrderId(orderId); // Set loading state for this order
     try {
-      const response = await fetch(`/client/order/update/order-status/${orderId}`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/client/order/update/order-status/${orderId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

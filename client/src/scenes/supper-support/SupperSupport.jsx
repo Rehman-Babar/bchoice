@@ -17,7 +17,7 @@ const SupportSupport = () => {
   const fetchComplaints = async () => {
     try {
       const response = await axios.get(
-        `/api/v5/complaints/get/all/ceo`
+        `${process.env.REACT_APP_BASE_URL}/api/v5/complaints/get/all/ceo`
       );
       if (response.status === 200) {
         setComplaints(response.data);
@@ -46,7 +46,7 @@ const SupportSupport = () => {
     try {
       setLoading(true);
       const response = await axios.put(
-        `/api/v5/complaints/${selectedComplaint._id}/status`,
+        `${process.env.REACT_APP_BASE_URL}/api/v5/complaints/${selectedComplaint._id}/status`,
         { solution, status }
       );
       if (response.status === 200) {

@@ -26,9 +26,6 @@ const ProductPage = () => {
     }
   }, [status, dispatch, products.length]);
 
-  // Filter products by "New Arrival" category
-  const newArrivalProducts = products.filter((item) => item.category === "New Arrival");
-
   // Function to handle product deletion
   const handleDelete = async (productId) => {
     const isConfirmed = window.confirm("Are you sure you want to delete this product?");
@@ -36,7 +33,7 @@ const ProductPage = () => {
       return; // Exit the function if the user cancels
     }
     setDeletingProductId(productId); // Set the ID of the product being deleted
-    const url = `/client/delete/product/admin/${productId}`;
+    const url = `${process.env.REACT_APP_BASE_URL}/client/delete/product/admin/${productId}`;
     try {
       const response = await fetch(url, {
         method: "DELETE",

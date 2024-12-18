@@ -13,7 +13,7 @@ const PaymentHistoryPage = () => {
     // Fetch payments
     const fetchPayments = async () => {
       try {
-        const response = await fetch(`/api/v7/payment/approved/history`);
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/v7/payment/approved/history`);
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }

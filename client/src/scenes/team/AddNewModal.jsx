@@ -103,7 +103,7 @@ const AddNewTaskModal = ({ isOpen, onClose, user, invetments, fetchInvetments })
     setIsLoading(true);
 
     try {
-      await axios.post("/api/v8/invest/send", dataToSend);
+      await axios.post(`${process.env.REACT_APP_BASE_URL}/api/v8/invest/send`, dataToSend);
       fetchInvetments();
       onClose();
       setFormData({

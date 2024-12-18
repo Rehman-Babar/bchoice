@@ -23,7 +23,7 @@ const AllProductsForSellers = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("/api/v3/products/products/all"); // Replace with your API endpoint
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v3/products/products/all`); // Replace with your API endpoint
         setProducts(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -55,7 +55,7 @@ const AllProductsForSellers = () => {
 
     try {
       const response = await axios.post(
-        `/api/v3/products/products/update/${currentProductUpdate._id}`,
+        `${process.env.REACT_APP_BASE_URL}/api/v3/products/products/update/${currentProductUpdate._id}`,
         formData
       );
       toast.success("Product updated successfully!");
@@ -76,7 +76,7 @@ const AllProductsForSellers = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "/api/v3/products/products/add",
+        `${process.env.REACT_APP_BASE_URL}/api/v3/products/products/add`,
         formData
       );
       toast.success("Product submitted successfully!");
@@ -95,7 +95,7 @@ const AllProductsForSellers = () => {
   const submitDelete =async (product) => {
     setLoading(true);
     try {
-      await axios.delete(`/api/v3/products/delete/${product._id}`);
+      await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/v3/products/delete/${product._id}`);
       toast.success("Product deleted successfully!");
       setProducts((prev) => prev.filter((p) => p._id!== product._id));
     } catch (error) {
@@ -215,7 +215,7 @@ const AllProductsForSellers = () => {
         <img
           key={index}
           src={imageUrl}
-          alt={`${selectedProduct.productName} - Image ${index + 1}`}
+          alt={`test`}
           className="w-16 h-16 rounded-sm cursor-pointer border"
           onClick={() => {
             setShowImageModal(true); // Show the image modal

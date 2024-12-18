@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 //  Async thunk for fetching orders
 export const fetchOrders = createAsyncThunk("orders/fetchOrders", async () => {
-  const response = await fetch("/client/getallorders");
+  const response = await fetch(`${process.env.REACT_APP_BASE_URL}/client/getallorders`);
   const data = await response.json();
 
   // Separate orders by category without overlaps

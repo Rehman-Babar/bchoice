@@ -57,7 +57,7 @@ const GettingCustomGift = () => {
     }
   
     setDeletingProductId(productId); // Set the ID of the product being deleted
-    const url = `/client/delete/product/admin/${productId}`;
+    const url = `${process.env.REACT_APP_BASE_URL}/client/delete/product/admin/${productId}`;
     
     try {
       const response = await fetch(url, { method: "DELETE" });

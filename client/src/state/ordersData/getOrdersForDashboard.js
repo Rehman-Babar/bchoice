@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // Async thunk for fetching all orders
 export const fetchAllOrders = createAsyncThunk("allorders/fetchAllOrders", async () => {
-  const response = await fetch("/client/getallorders");
+  const response = await fetch(`${process.env.REACT_APP_BASE_URL}/client/getallorders`);
   const data = await response.json();
   console.log("allOrders", data)
   return data; // Return the entire order data as-is

@@ -39,7 +39,7 @@ const loadUserFromLocalStorage = () => {
 // Async thunk actions
 export const signup = createAsyncThunk("auth/signup", async (credentials, { rejectWithValue }) => {
   try {
-    const response = await axios.post("/api/v1/auth/signup", credentials);
+    const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/v1/auth/signup`, credentials);
     toast.success("Account created successfully");
     // Save user to localStorage
     setWithExpiry("user", response.data.user, 1);
@@ -52,7 +52,7 @@ export const signup = createAsyncThunk("auth/signup", async (credentials, { reje
 
 export const login = createAsyncThunk("auth/login", async (credentials, { rejectWithValue }) => {
   try {
-    const response = await axios.post("http://194.164.77.27:8000/api/v1/auth/login", credentials);
+    const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/v1/auth/login`, credentials);
     // Save user to localStorage
     setWithExpiry("user", response.data.user, 1);
     return response.data.user;
@@ -64,7 +64,7 @@ export const login = createAsyncThunk("auth/login", async (credentials, { reject
 
 export const logout = createAsyncThunk("auth/logout", async (_, { rejectWithValue }) => {
   try {
-    await axios.post("/api/v1/auth/logout");
+    await axios.post(`${process.env.REACT_APP_BASE_URL}/api/v1/auth/logout`);
     toast.success("Logged out successfully");
     // Remove user from localStorage
     localStorage.removeItem("admin user");
@@ -77,7 +77,7 @@ export const logout = createAsyncThunk("auth/logout", async (_, { rejectWithValu
 
 export const authCheck = createAsyncThunk("auth/authCheck", async (_, { rejectWithValue }) => {
   try {
-    const response = await axios.get("/api/v1/auth/me");
+    const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v1/auth/me`);
     return response.data.user;
   } catch (error) {
     const user = loadUserFromLocalStorage();

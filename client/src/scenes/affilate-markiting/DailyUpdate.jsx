@@ -17,7 +17,7 @@ const DailyUpdate = () => {
   // Fetch updates from the backend
   const fetchUpdates = async () => {
     try {
-      const response = await fetch(`/api/v6/dailyupdate/get/all/ceo`);
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/v6/dailyupdate/get/all/ceo`);
       if (response.ok) {
         const data = await response.json();
         console.log(data)
@@ -53,7 +53,7 @@ const DailyUpdate = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("/api/v6/dailyupdate/create", {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/v6/dailyupdate/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

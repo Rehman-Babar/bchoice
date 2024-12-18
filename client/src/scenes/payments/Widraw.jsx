@@ -17,7 +17,7 @@ const PandingWidraw = () => {
 
   const fetchPayments = async () => {
     try {
-      const response = await fetch(`/api/v7/payment/unapproved`);
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/v7/payment/unapproved`);
       if (!response.ok) {
         throw new Error(`Error: ${response.statusText}`);
       }
@@ -53,7 +53,7 @@ const PandingWidraw = () => {
   const handleSubmit = async () => {
     if (!selectedPayment) return;
     try {
-      const response = await fetch(`/api/v7/payment/unapproved/approve/admin/${selectedPayment._id}`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/v7/payment/unapproved/approve/admin/${selectedPayment._id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ const PandingWidraw = () => {
   // Handle delete
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`/api/v7/payment/unapproved/admin/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/v7/payment/unapproved/admin/${id}`, {
         method: "DELETE",
       });
 

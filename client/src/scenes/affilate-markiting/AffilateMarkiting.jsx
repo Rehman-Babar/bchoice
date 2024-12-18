@@ -31,7 +31,7 @@ const [sellerPersonalBallance, setsellerPersonalBallance] = useState(''); // For
   // Function to fetch orders
   const fetchOrders = async () => {
     try {
-      const response = await axios.get("/api/v3/affilate/getorder/affilate/ceo");
+      const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/v3/affilate/getorder/affilate/ceo`);
       setOrders(response.data);
     } catch (error) {
       console.error("Error fetching orders:", error);
@@ -52,7 +52,7 @@ const [sellerPersonalBallance, setsellerPersonalBallance] = useState(''); // For
     }
     try {
       const response = await axios.post(
-        `/api/v3/affilate/updateorder/affilate/team/update/${currentOrderupdate._id}`,
+        `${process.env.REACT_APP_BASE_URL}/api/v3/affilate/updateorder/affilate/team/update/${currentOrderupdate._id}`,
         formData
       );
       console.log("Order updated successfully:", response.data);
@@ -70,7 +70,7 @@ const [sellerPersonalBallance, setsellerPersonalBallance] = useState(''); // For
   };
   const handleStatusUpdate = async (orderId, newStatus) => {
     try {
-      const response = await fetch(`/api/v3/affilate/updateorderstatus/affilate/team/status/${orderId}`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/v3/affilate/updateorderstatus/affilate/team/status/${orderId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -110,7 +110,7 @@ const [sellerPersonalBallance, setsellerPersonalBallance] = useState(''); // For
     // console.log(currentOrderForModal._id);
     try {
       const response = await axios.post(
-        `/api/v3/affilate/update/ballance/affilate/team/${currentOrderForModal._id}`,
+        `${process.env.REACT_APP_BASE_URL}/api/v3/affilate/update/ballance/affilate/team/${currentOrderForModal._id}`,
         {
           isOrderpayed: isChecked, // Send checkbox value
           sellerPersonalBallance: sellerPersonalBallance, // Send input field value
@@ -154,7 +154,7 @@ if (!isConfirmed) {
   try {
     // API call to delete the order
     await axios.delete(
-      `/api/v3/affilate/delete/affilate/team/${orderId}`
+      `${process.env.REACT_APP_BASE_URL}/api/v3/affilate/delete/affilate/team/${orderId}`
     );
 
     // Notify the user of success

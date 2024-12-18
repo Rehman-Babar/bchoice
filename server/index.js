@@ -60,10 +60,6 @@ app.use("/client", clientRoutes);
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000;
 
-app.use(express.static(path.join(__dirname, "client/build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-});
 
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -72,13 +68,5 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
-
-    /* ONLY ADD DATA ONE TIME */
-    // AffiliateStat.insertMany(dataAffiliateStat);
-    // OverallStat.insertMany(dataOverallStat);
-    // Product.insertMany(dataProduct);
-    // ProductStat.insertMany(dataProductStat);
-    // Transaction.insertMany(dataTransaction);
-    // User.insertMany(dataUser);
   })
   .catch((error) => console.log(`${error} did not connect`));

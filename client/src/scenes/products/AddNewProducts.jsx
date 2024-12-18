@@ -154,7 +154,7 @@ const AddProductPage = () => {
     try {
       setLoading(true);
 
-      const response = await fetch(`/client/addproducts`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/client/addproducts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -18,7 +18,7 @@ const Advertising = () => {
     const fetchUsers = async () => {
         try {
             const response = await axios.get(
-                "/api/v2/auth/seller/buyer/admin/users/special"
+                `${process.env.REACT_APP_BASE_URL}/api/v2/auth/seller/buyer/admin/users/special`
             );
             setUsers(response.data);
             setLoading(false);
@@ -31,7 +31,7 @@ const Advertising = () => {
     const fetchInvetments = async () => {
         try {
             const response = await axios.get(
-                "/api/v8/invest/get"
+                `${process.env.REACT_APP_BASE_URL}/api/v8/invest/get`
             );
             setInvetments(response.data);
             setLoading(false);
@@ -54,7 +54,7 @@ const Advertising = () => {
     const handleDeleteInvestment = async (investmentId) => {
         try {
             await axios.delete(
-                `/api/v8/invest/delete/investment/${investmentId}`
+                `${process.env.REACT_APP_BASE_URL}/api/v8/invest/delete/investment/${investmentId}`
             );
             setInvetments(invetments.filter((invest) => invest._id!== investmentId));
             toast.success("Investment deleted successfully!");

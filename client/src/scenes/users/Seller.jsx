@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import EditModal from "scenes/products/hooks/EditModal";
+// import EditModal from "scenes/products/hooks/EditModal";
 import SellerModal from "./SellerModal";
 import toast from "react-hot-toast";
 import { MdDelete } from "react-icons/md";
@@ -16,7 +16,7 @@ const SellerUsers = () => {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(
-        "/api/v2/auth/seller/buyer/admin/users/special"
+        `${process.env.REACT_APP_BASE_URL}/api/v2/auth/seller/buyer/admin/users/special`
       );
       setUsers(response.data); // Assuming response.data contains the list of users
       console.log(response.data);
@@ -65,7 +65,7 @@ if (!isConfirmed) {
   return;
 }
     try {
-      await axios.delete(`/api/v2/auth/del/${userId}`);
+      await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/v2/auth/del/${userId}`);
       setUsers(users.filter(user => user._id !== userId)); // Remove the user from the list
       closeModal();
       toast.success("User deleted successfully")
@@ -75,19 +75,6 @@ if (!isConfirmed) {
     }
   };
 
-  // Change user status (example: change to 'Active' or 'Inactive')
-  // const changeStatus = async (userId, currentStatus) => {
-  //   try {
-  //     const newStatus = currentStatus === "Active" ? "Inactive" : "Active";
-  //     await axios.patch(`/api/v2/auth/seller/buyer/admin/users/${userId}`, { status: newStatus });
-  //     setUsers(users.map(user => 
-  //       user._id === userId ? { ...user, status: newStatus } : user
-  //     ));
-  //   } catch (err) {
-  //     console.error("Failed to change status:", err);
-  //     setError("Failed to change status");
-  //   }
-  // };
 
   return (
     <>
