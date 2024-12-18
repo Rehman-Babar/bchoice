@@ -52,7 +52,7 @@ export const signup = createAsyncThunk("auth/signup", async (credentials, { reje
 
 export const login = createAsyncThunk("auth/login", async (credentials, { rejectWithValue }) => {
   try {
-    const response = await axios.post("/api/v1/auth/login", credentials);
+    const response = await axios.post("http://194.164.77.27:8000/api/v1/auth/login", credentials);
     // Save user to localStorage
     setWithExpiry("user", response.data.user, 1);
     return response.data.user;
