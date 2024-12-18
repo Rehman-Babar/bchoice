@@ -10,22 +10,29 @@ body,
   width: 100%;
   font-family: "Inter", sans-serif;
 }
-
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
+  height: 8px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #7a7f9d;
+  background: transparent;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #21295c;
+  background: #ff4560;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  
 }
-
-/* Handle on Hover */
-::-webkit-scrollbar-track:hover {
-  background: #21295c;
+.glass{
+  /* From https://css.glass */
+/* background: rgba(255, 20, 2, 0.23); */
+box-shadow: 0 4px 30px rgba(57, 57, 57, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(21, 4, 58, 0.032);
 }

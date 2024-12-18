@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 // Define the entire order schema
-
 const orderSchema = new Schema({
   // Contact Information as an embedded document
   email: {
@@ -11,7 +10,6 @@ const orderSchema = new Schema({
   },
 
   // Delivery Address as an embedded document
-
   firstName: {
     type: String,
     required: true,
@@ -44,6 +42,10 @@ const orderSchema = new Schema({
         type: String,
         required: true,
       },
+      productImage: {
+        type: String,
+        required: true,
+      },
       quantity: {
         type: Number,
         required: true,
@@ -51,6 +53,10 @@ const orderSchema = new Schema({
       price: {
         type: Number,
         required: true,
+      },
+      category: {
+        type: String,
+        // required: true,
       },
     },
   ],
@@ -74,6 +80,13 @@ const orderSchema = new Schema({
     // required: true,
   },
 
+  // TODO status fields
+  status: {
+    type: String,
+    enum: ["InProgress", "Dispatched", "Delivered", "Returned", "Cancelled", "Issued" ],
+    default: "InProgress",
+  },
+  
   // Automatically add timestamps (createdAt, updatedAt)
   created_at: {
     type: Date,
