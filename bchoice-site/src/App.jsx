@@ -10,7 +10,7 @@ import Signup from "./Accounts/SignUp";
 import LogIn from "./Accounts/Login";
 import BlogPage from "./blog/BlogPage";
 import Faq from "./faq/Faq";
-import Policy from "./policy/policy";
+import Policy from "./policy/policy.jsx";
 import TermOfServices from "./pages/termofservices/TermOfServices";
 import Reviews from "./reviews/Reviews";
 import TopProductCollection from "./TopProductCollection/TopProductCollection";
