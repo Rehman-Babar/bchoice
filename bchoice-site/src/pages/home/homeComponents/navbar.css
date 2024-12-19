@@ -1,0 +1,7 @@
+/* .for-hidden  */
+/*  @media (min-width: 768px) { ... } */
+@media only screen and (max-width: 768) {
+  .for-hidden {
+    display: none;
+  }
+}

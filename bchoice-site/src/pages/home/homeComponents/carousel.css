@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+body {
+  overflow-x: hidden;
+}
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  
+}
+
+.carousel-slide {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.5s ease-in-out;
+}
+.carousel-slide1 {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: left 0.5s ease-in-out;
+}
+
+.left-align .content {
+  text-align: left;
+}
+
+.center-align .content {
+  text-align: center;
+}
+
+.content h3,
+.content h1,
+.content p {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.view-collection-btn {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* margin-top: 20px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.first-title {
+  color: #000000 !important;
+}
+
+.view-collection-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.navigation {
+  left: 40%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.nav-btn,
+.play-pause-btn {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #000;
+  width: 20px;
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1424px) {
+  .for-lg {
+    margin-left: 0px !important;
+    /* background-image: url(/public/carousal-1-2.jpg) !important; */
+    color: #fff !important;
+    /* margin-left: -0px; */
+    margin-left: 300px;
+  }
+  .bg2-img {
+    background-image: url("https://img.freepik.com/free-photo/wireless-earbuds-with-neon-cyberpunk-style-lighting_23-2151074309.jpg?w=1380&t=st=1725778639~exp=1725779239~hmac=f081000d3cbce4cb2c79094760aca20398d6fc686da910abb1e9e0545324a754") !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-clip: border-box;
+    background-origin: border-box;
+    background-clip: border-box;
+    background-origin: border-box;
+    background-clip: border-box;
+    padding: 20px;
+  }
+  .btn-sm {
+    /* font-size: 14px; */
+    /* padding: 5px 10px; */
+    color: #000 !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .second-img{
+    margin-top: 50rem;
+  }
+}
+@media (max-width: 1024px) {
+  .for-lg {
+    margin-left: 0px !important;
+    /* background-image: url(/public/carousal-1-2.jpg) !important; */
+    color: #fff !important;
+    /* margin-left: -0px; */
+    margin-left: 500px;
+    padding-left: 20px;
+  }
+  .btn-sm {
+    /* font-size: 14px; */
+    /* padding: 5px 10px; */
+    color: #000 !important;
+  }
+  .bg2-img {
+    background-image: url("https://img.freepik.com/free-photo/wireless-earbuds-with-neon-cyberpunk-style-lighting_23-2151074309.jpg?w=1380&t=st=1725778639~exp=1725779239~hmac=f081000d3cbce4cb2c79094760aca20398d6fc686da910abb1e9e0545324a754") !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-clip: border-box;
+    background-origin: border-box;
+    background-clip: border-box;
+    background-origin: border-box;
+    background-clip: border-box;
+  }
+}
+@media (max-width: 724px) {
+  .for-lg {
+    margin-left: 0px !important;
+    /* background-image: url(/public/carousal-1-2.jpg) !important; */
+    color: #fff !important;
+    /* margin-left: -0px; */
+    /* margin-left: 500px; */
+    padding-left: 20px;
+  }
+  .btn-sm {
+    /* font-size: 14px; */
+    /* padding: 5px 10px; */
+    color: #000 !important;
+  }
+  .bg2-img {
+    background-image: url("https://img.freepik.com/free-photo/wireless-earbuds-with-neon-cyberpunk-style-lighting_23-2151074309.jpg?w=1380&t=st=1725778639~exp=1725779239~hmac=f081000d3cbce4cb2c79094760aca20398d6fc686da910abb1e9e0545324a754") !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-clip: border-box;
+    background-origin: border-box;
+    background-clip: border-box;
+    background-origin: border-box;
+    background-clip: border-box;
+  }
+}
+
+@media (max-width: 1024px) {
+  .carousel {
+    height: 30vh;
+  }
+
+  .carousel-slide .content h1 {
+    font-size: 36px;
+  }
+
+  .carousel-slide .content h3 {
+    font-size: 18px;
+  }
+
+  .carousel-slide .content p {
+    font-size: 14px;
+  }
+
+  .view-collection-btn {
+    padding: 10px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    height: 50vh;
+  }
+
+  .carousel-slide .content h1 {
+    font-size: 28px;
+  }
+
+  .carousel-slide .content h3 {
+    font-size: 16px;
+  }
+
+  .carousel-slide .content p {
+    font-size: 12px;
+  }
+
+  .view-collection-btn {
+    padding: 10px 20px;
+  }
+
+  .navigation {
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel {
+    height: 40vh;
+  }
+
+  .carousel-slide .content h1 {
+    font-size: 22px;
+  }
+
+  .carousel-slide .content h3 {
+    font-size: 14px;
+  }
+
+  .carousel-slide .content p {
+    font-size: 10px;
+  }
+
+  .view-collection-btn {
+    padding: 8px 16px;
+  }
+
+  .navigation {
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 5px;
+  }
+
+  .nav-btn,
+  .play-pause-btn {
+    font-size: 16px;
+    padding: 5px 15px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dot.active {
+    width: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 35vh;
+  }
+
+  .carousel-slide .content h1 {
+    font-size: 20px;
+  }
+
+  .carousel-slide .content h3,
+  .carousel-slide .content p {
+    font-size: 10px;
+  }
+
+  .view-collection-btn {
+    padding: 6px 12px;
+  }
+
+  .nav-btn,
+  .play-pause-btn {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+}

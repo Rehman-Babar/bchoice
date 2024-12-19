@@ -1,0 +1,22 @@
+.for-card-hover:hover {
+  transition: transform 2s ease-in-out;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.for-text-hover:hover {
+  /* color: #ffffff; */
+  transition: color 2s ease-in-out;
+  transform: scale(1.05);
+  cursor: pointer;
+  /* background-color: #000000; */
+  /* padding: 10px; */
+  border-radius: 5px;
+  /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); */
+  /* margin-top: 10px; */
+}
+.hover-class:hover {
+  height: fit-content;
+  transition: transform 2s ease-in-out;
+  width: fit-content;
+}

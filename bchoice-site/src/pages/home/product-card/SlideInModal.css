@@ -1,0 +1,9 @@
+/* SlideInModal.css */
+.slide-in-modal {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide-in-modal.open {
+  transform: translateX(0);
+}

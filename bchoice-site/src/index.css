@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
+
+.group:hover img {
+  cursor: zoom-in;
+}
+
+/* Cursor change to a plus icon */
+.group-hover\:opacity-100:hover {
+  cursor: crosshair;
+}
+.glass{
+  /* From https://css.glass */
+/* background: rgba(255, 20, 2, 0.23); */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 20, 2, 0.22);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  /* Quick scroll during the first 4 seconds */
+  5% {
+    transform: translateX(40%);
+  }
+  /* Transition to slower scroll */
+  10% {
+    transform: translateX(25%);
+  }
+  /* Slow down to the final pace */
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  display: inline-block;
+  animation: scroll 80s linear infinite;
+}
+
+/* Shake animation - left and right only */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+/* Blur effect without scaling */
+@keyframes blur {
+  0%, 100% {
+    box-shadow: 0 0 0px rgba(128, 128, 128, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(128, 128, 128, 0.5);
+  }
+}
+
+/* Combined animation class */
+.animate-shake-blur {
+  animation: shake 1s ease-in-out infinite alternate, blur 1s ease-in-out infinite;
+}
+
+

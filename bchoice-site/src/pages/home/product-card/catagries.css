@@ -1,0 +1,10 @@
+.slick-slide {
+  padding: 8px;
+}
+/* media query */ 
+
+@media (max-width: 600px) {
+ .slick-slide {
+    padding: 4px;
+  }
+}
